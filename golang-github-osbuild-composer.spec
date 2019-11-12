@@ -4,7 +4,7 @@
 %global repo            osbuild-composer
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
 %global goipath         %{provider_prefix}
-%global commit
+%global commit          f7df7361495644ddb26f36a65fefa77a14bd041b
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Version:        2
