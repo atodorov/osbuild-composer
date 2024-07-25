@@ -25,6 +25,20 @@ fi
 
 GOVC_CMD=/tmp/govc
 
+# for el10 we should execute tests against vcenter8 instead of vcenter6 otherwise
+# we get kernel panic when the VM boots
+
+# try unconditionally switching over all testing to vcenter8
+export GOVMOMI_URL="$VC8_GOVMOMI_URL"
+export GOVMOMI_USERNAME="$VC8_GOVMOMI_USERNAME"
+export GOVMOMI_PASSWORD="$VC8_GOVMOMI_PASSWORD"
+export GOVMOMI_DATACENTER="$VC8_GOVMOMI_DATACENTER"
+export GOVMOMI_CLUSTER="$VC8_GOVMOMI_CLUSTER"
+export GOVMOMI_NETWORK="$VC8_GOVMOMI_NETWORK"
+export GOVMOMI_DATASTORE="$VC8_GOVMOMI_DATASTORE"
+export GOVMOMI_FOLDER="$VC8_GOVMOMI_FOLDER"
+
+
 # Note: in GitLab CI the GOVMOMI_ variables are defined one-by-one
 # instead of sourcing them from a file!
 VCENTER_CREDS="${VCENTER_CREDS:-}"
